@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blood track donar</title>
+    <link rel="shortcut icon" type="x=icon" href="logo.jpg">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+
+    crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <style>
+       
+        header{
+            display: flex;
+            justify-content: space-between;
+            padding: 7px 20px;
+            margin-bottom: 0px;
+            background-color: black;
+            color: #fff;
+        }
+       nav {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            transform: skew(-25deg);
+            padding-top: 20px;
+            padding-bottom: 5px;
+            padding-left: 30px;
+            margin-top: 0px;
+            padding-right: 30px;
+            background: transparent;
+        }
+        nav a {
+           
+            text-decoration: none;
+            padding: 7px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-left: 25px;
+            border-radius: 3px;
+            color: blue;
+          background-color: lavender;
+            transition: all 0.2s linear;
+        }
+        nav a:hover {
+         background-color: #c39bd3;
+           color: black;
+            
+        }
+
+        .logo{
+                left: 0px;
+                justify-content: center;
+                width: 65px;
+                height: 60px;
+                padding-top: 0px;
+               padding-bottom: 0px;
+               border-radius: 15px;
+               margin-left: 30px;
+               margin-top: 0px;
+               margin-bottom: 0px;
+        }
+        #op{
+            font-weight: bolder;
+            font-style: normal;
+            font-size: x-large;
+            height: 50%; 
+            margin-right: 10%;
+            margin-left: 10%;
+            margin-top: 10px;
+            
+            
+          }
+          .background{
+            background-image: url(redb.jpg );
+            background-repeat: no-repeat;
+            background-size: cover;
+          }
+        #table{
+           display: flex;
+           justify-content: center;
+        }
+        
+        @keyframes moveLetters {
+        0% {
+            transform: translateX(0);
+        }
+        50% {
+            transform: translateX(50px);
+        }
+        100% {
+            transform: translateX(0);
+        }
+      }
+      .moving-text {
+        display:inline-block;
+        padding-left: 60px;
+        font-size: 24px;
+        animation: moveLetters 0.9s infinite;
+        color: rgb(107, 3, 3);
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+      
+      .design{
+        color: #ae1313;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        
+      }
+      .btn{
+        padding: 7px 40px;
+        background-color: cornflowerblue;
+        border: 0;
+        outline: none;
+        cursor: pointer;
+        font-size: 22px;
+        font-weight: 500;
+        border-radius: 30px;
+        margin-bottom: 30px;
+      }
+      .btn:hover{
+        background-color: cadetblue;
+       color: #ae1313;
+      }
+      .popup{
+        width: 400px;
+        background-color: #fff;
+        border-radius: 6px;
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.1);
+        text-align: center;
+        padding: 0 30px 30px;
+        color: #333;
+        visibility: hidden;
+        transition: transform 0.4s, top 0.4s;
+      }
+      .open-popup{
+        visibility: visible;
+        top: 50%;
+        transform: translate(-50%,-50%) scale(1);
+      }
+      .popup img{
+        width: 100px;
+        margin-top: -50px;
+        border-radius: 50%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0,0.2);
+      }
+      .popup h2{
+        font-size: 38px;
+        font-weight: 500;
+        margin: 30px 0 10px;
+      }
+      .popup button{
+        width: 40%;
+        margin-top: 10px;
+        padding: 10px 0;
+        background: #6fd649;
+        color: #fff;
+        border: 0;
+        outline: none;
+        font-size: 18px;
+        border-radius: 4px;
+        cursor: pointer;
+        box-shadow: 0 5px 5px rgba(0, 0, 0,0.2);
+      }
+      .popup button:hover{
+        background-color: skyblue;
+        color: #333;
+      }
+
+      h2{
+        padding-left: 60px;
+      }
+      footer {
+        background-color: rgba(0, 0, 0, 0.907);
+            color: #fff;
+            text-align: center;
+            padding: 5px;
+            font-style: italic;
+            font-size: larger;
+            bottom: 0;
+            
+            
+        }
+        .socialIcons{
+        margin-top: 5px;
+      }
+      .socialIcons a{
+        margin-left: 15px;
+      }
+      body{
+        margin: 0px;
+        padding: 0px;
+        background-image: linear-gradient(to bottom,rgb(182, 233, 233),rgb(245, 189, 252));
+        
+      }
+     .a{
+      background-color: blanchedalmond;
+     }
+    
+    .b{
+      text-align: center;
+    }
+    .ab{
+      text-align: center;
+      color: red;
+    }
+
+    #data{
+      
+     padding-left: 30px;
+    }
+
+
+     
+    </style>
+</head>
+<body>
+  <header>
+      
+    <img src="logo.jpg" class="logo" alt="logo">
+    <h1 style="margin-top: 0px;padding-top: 12px; padding-bottom: 0px; margin-bottom: 0px; " ><span style="color: crimson;"> BLOOD</span> TRACK</h1>
+ <nav>
+     <a href="admin.html">VOLUNTEER</a>
+     <a href="index.html">HOME</a>
+     <a href="about.html">ABOUT</a>
+     <a href="contact.html">CONTACT</a>
+ </nav>    
+</header>
+    <p>
+      <span class="moving-text">WARNING: BEFORE FILLING THE FORM PLEASE CHECK THE <a href="#data"> "compatible blood type donors:"</a> TABLE LISTED BELOW.</span> 
+    </p>
+    <div id="op"  class="background">
+        <h2 style="padding-top: 60px; color: black; cursor: pointer;">BLOOD DONATE AND REQUEST FORM:</h2>
+        <table id="table">
+            <form>
+                <tr>
+                    <td style="color: antiquewhite;">NAME:</td> <td> <input type="text" placeholder="enter your name" id="nameinput" required></td>
+                </tr>
+                <tr>
+                    <td style="color: antiquewhite;">MOBILE NUMBER:</td> <td> <input type="number" placeholder="enter mobile number" id="numberinput"></td>
+                </tr><BR>
+                  <tr>
+                    <td style="color: antiquewhite;">PURPOSE:</td><td><label for="purpose"></label>
+                    <select id="purpose" name="purpose">
+                      <option value="not selected">select</option>
+                      <option value="DONATE BLOOD">DONATE BLOOD</option>
+                      <option value="NEED BLOOD">NEED BLOOD</option>
+                    </select>
+                    </td>
+                  </tr>
+                <tr>
+                    <td style="color: antiquewhite;"> BLOOD GROUP:</td><td><label for="bloodgroup"></label>
+                        <select id="bloodgroup" name="bloodgroup">
+                            <option value="not selected">-SELECT-</option>
+                            <option value="A+">A+</option>
+                            <option value="A1+">A1+</option>
+                            <option value="A1-">A1-</option>
+                            <option value="A1B+">A1B+</option>
+                            <option value="A1B-">A1B-</option>
+                            <option value="A2+">A2+</option>
+                            <option value="A2-">A2-</option>
+                            <option value="A2B+">A2B+</option>
+                            <option value="A2B-">A2B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="BOMBAY BLOOD GROUP">BOMBAY BLOOD GROUP</option>
+                            <option value="O+">O+</option>
+                            <option value="0-">O-</option>
+                          </select></td>
+                </tr>
+                <tr>
+                    <td style="color: antiquewhite;"> COUNTRY: </td> <td> <label for="country"></label>
+                     <select id="country" name="country">
+                         <option value="select">-SELECT-</option>
+                         <option value="INDIA">INDIA</option>
+                         <option value="NEPAL">NEPAL</option>
+                         <option value="SRI LANKA">SRI LANKA</option>
+                         <option value="OMAN">OMAN</option>
+                         <option value="BANGLADESH">BANGLADESH</option>
+                         <option value="MALAYSIA">MALAYSIA</option>
+                         <option value="SINGAPORE">SINGAPORE</option>
+                      </select></td>
+                </tr>
+                <tr>
+                    <td style="color: antiquewhite;">STATE:</td> <td><input type="text" placeholder="enter your state" id="stateinput" required></td>
+                </tr>
+                <tr>
+                    <td style="color: antiquewhite;" >CITY:</td> <td><input type="text" placeholder="enter your city name" id="city" required></td>
+                </tr>
+                <tr>
+                  <td style="color: antiquewhite;">APPOINTMENT DATE:</td> <td><input type="date" placeholder="enter appoinment date" id="date" required> </td>
+
+                </tr>
+                <tr>
+                  <td style="color: antiquewhite;">APPOINTMENT TIME:</td> <td><label for="time"></label>
+                    <select id="time">
+                        <option value="NOT SELECTED">SELECT</option>
+                        <option value="7:00 AM TO 8:00 AM">7:00 AM TO 8:00 AM</option>
+                        <option value="8:00 AM TO 9:00 AM">8:00 AM TO 9:00 AM</option>
+                        <option value="9:00 AM TO 10:00 AM">9:00 AM TO 10:00 AM</option>
+                        <option value="10:00 AM TO 11:00 AM">10:00 AM TO 11:00 AM</option>
+                        <option value="11:00 AM TO 12:00 PM">11:00 AM TO 12:00 PM</option>
+                        <option value="1:00 PM TO 2:00 PM">1:00 PM TO 2:00 PM</option>
+                        <option value="2:00 PM TO 3:00 PM">2:00 PM TO 3:00 PM</option>
+                        <option value="3:00 PM TO 4:00 PM">3:00 PM TO 4:00 PM</option>
+                        <option value="4:00 PM TO 5:00 PM">4:00 PM TO 5:00 PM</option>
+                        <option value="5:00 PM TO 6:00 PM">5:00 PM TO 6:00 PM</option>
+                        <option value="6:00 PM TO 7:00 PM">6:00 PM TO 7:00 PM</option>
+                        <option value="7:00 PM TO 8:00 PM">7:00 PM TO 8:00 PM</option>
+                        <option value="8:00 PM TO 9:00 PM">8:00 PM TO 9:00 PM</option>
+                        
+                     </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td> <input type="reset" style="background-color: deepskyblue;"> </td> 
+                  </td>
+                </tr>
+            </form>
+            <tr>
+                <td></td><td ><button type="submit" class="btn" id="submit" onclick="openPopup()">submit</button></td>
+            </tr>
+        </table>
+    </div>
+    
+      
+           <div class="popup" id="popup">
+            <img src="mark.png" alt="image not loaded" width="100px">
+            <h2 style="padding-left: 0px;">Thankyou!</h2>
+            <p>your request has been accepted please wait we will call you 
+                and conform
+            </p>
+            <h4>your details:</h4>
+            <div id="displayname"></div>
+            <div id="displaynumber"></div>
+            <div id="displaypurpose"></div>
+            <div id="displaybloodgroup"></div>
+            <div id="displaydate"></div>
+            <div id="displaytime"></div>
+            <div id="displaycity"></div>
+            
+            <button type="button" onclick="closePopup()">ok</button>
+           </div>
+        
+        <p>
+            <span class="moving-text">Warning:Do not pay money for blood to the blood donor.If any person seeking money contact the website or call nearby team members.</span> 
+        </p><br>
+        <H2 id="data">COMPATIBLE BLOOD TYPE DONORS TABLE:</H2>
+        <DIV  style="margin-left: 30px;">
+            
+            <table border="1" style="width: 50%; margin-bottom: 50px;">
+              <thead>
+                <tr style="background-color: #333; color: aqua;">
+                  <th>Blood Type</th>
+                  <th>Can Donate To</th>
+                  <th>Can Receive From</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="a">
+                  <td class="ab">A+</td>
+                  <td class="b">A+, AB+</td>
+                  <td class="b">A+, A-, O+, O-</td>
+                </tr>
+                <tr class="a">
+                  <td class="ab">A-</td>
+                  <td class="b">A+, A-, AB+, AB-</td>
+                  <td class="b">A-, O-</td>
+                </tr>
+                <tr class="a">
+                  <td class="ab">B+</td>
+                  <td class="b">B+, AB+</td>
+                  <td class="b">B+, B-, O+, O-</td>
+                </tr>
+                <tr class="a">
+                  <td class="ab">B-</td>
+                  <td class="b">B+, B-, AB+, AB-</td>
+                  <td class="b">B-, O-</td>
+                </tr>
+                <tr class="a">
+                  <td class="ab">AB+</td>
+                  <td class="b">AB+</td>
+                  <td class="b">All Blood Types</td>
+                </tr>
+                <tr class="a">
+                  <td class="ab">AB-</td>
+                  <td class="b">AB+, AB-</td>
+                  <td class="b">A-, B-, AB-, O-</td>
+                </tr>
+                <tr class="a">
+                  <td class="ab">O+</td>
+                  <td class="b">A+, B+, AB+, O+</td>
+                  <td class="b">O+, O-</td>
+                </tr>
+                <tr class="a">
+                  <td class="ab">O-</td>
+                  <td class="b">All Blood Types</td>
+                  <td class="b">O-</td>
+                </tr>
+              </tbody>
+            </table>
+            
+         </DIV>
+       
+        <footer>
+            <div class="socialIcons">
+
+                <a href="https://www.facebook.com/profile.php?id=61556919518855&mibextid=ZbWKwL" style="color:blue;"><i class="fa-brands fa-facebook"></i></a>
+        
+                <a href="https://www.instagram.com/donate_blood_to_save_life?igsh=ZGgyOG1oNGw0NTRz" style="color:red;"><i class="fa-brands fa-instagram"></i></a>
+        
+                <a href="https://www.instagram.com/donate_blood_to_save_life?igsh=ZGgyOG1oNGw0NTRz" style="color: cyan;"><i class="fa-brands fa-twitter"></i></a>
+        
+                <a href="https://youtu.be/xv-avP4PCDA?si=i0sd50PdHR3ZNxhU" style="color: red;"><i class="fa-brands fa-youtube"></i></a>
+           </div>
+        
+             <p style="margin-top: 3px;">Copyright &copy;2024;All Rights Reserved.Designed by <span class="design">The Blood Track</span></p>
+        </footer>
+        <script>
+            let popup = document.getElementById("popup");
+            function openPopup(){
+                popup.classList.add("open-popup");
+                var nameinput=document.getElementById("nameinput").value;
+                var numberinput=document.getElementById("numberinput").value;
+                var purpose=document.getElementById("purpose").value;
+                var bloodgroup=document.getElementById("bloodgroup").value;
+                var date=document.getElementById("date").value;
+                var time=document.getElementById("time").value;
+                var city=document.getElementById("city").value;
+    
+                var displaynamediv=document.getElementById("displayname");
+                var displaynumberdiv=document.getElementById("displaynumber");
+                var displaypurposediv=document.getElementById("displaypurpose")
+                var displaybloodgroupdiv=document.getElementById("displaybloodgroup");
+                var displaydatediv=document.getElementById("displaydate");
+                var displaytimediv=document.getElementById("displaytime");
+                var displaycitydiv=document.getElementById("displaycity");
+    
+                displaynamediv.textContent="name :"+nameinput;
+                displaynumberdiv.textContent="mobile number :"+numberinput;
+                displaypurposediv.textContent="purpose :"+purpose;
+                displaybloodgroupdiv.textContent="blood group :"+bloodgroup;
+                displaydatediv.textContent="appoinment date:"+date;
+                displaytimediv.textContent="appoinment time:"+time;
+                displaycitydiv.textContent="city :"+city;
+    
+            }
+            
+            function closePopup(){
+                popup.classList.remove("open-popup");
+            }
+    
+        </script>
+
+      <script type="module">
+          // Import the functions you need from the SDKs you need
+           import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+           import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js";
+           // TODO: Add SDKs for Firebase products that you want to use
+           // https://firebase.google.com/docs/web/setup#available-libraries
+           
+           // Your web app's Firebase configuration
+           const firebaseConfig = {
+             authDomain: "bloodtrack-vr46.firebaseapp.com",
+             projectId: "bloodtrack-vr46",
+             storageBucket: "bloodtrack-vr46.appspot.com",
+             messagingSenderId: "513930329652",
+             appId: "1:513930329652:web:880e77597879d0ea4a9461",
+             apiKey: "AIzaSyCi5B6YUD6X8GIL5JKGecZIt1d90dI6J1s",
+             measurementId: "G-9WE9WC3XES"
+            };   
+            
+           // Initialize Firebase
+           const app = initializeApp(firebaseConfig);
+           
+           
+           const db = getDatabase(app);
+           
+           document.getElementById("submit").addEventListener('click',function(e){
+           e.preventDefault();
+           
+           set(ref(db, 'blood form data/'+ document.getElementById("nameinput").value),
+           {
+           username: document.getElementById("nameinput").value,
+           phonenumber: document.getElementById("numberinput").value,
+           purpose: document.getElementById("purpose").value,
+           bloodgroup: document.getElementById("bloodgroup").value,
+           country: document.getElementById("country").value,
+           state: document.getElementById("stateinput").value,
+           city: document.getElementById("city").value,
+           appoinment_date: document.getElementById("date").value,
+           appoinment_time: document.getElementById("time").value
+           
+           });
+           
+           })
+      </script>
+   </body>
+</html>

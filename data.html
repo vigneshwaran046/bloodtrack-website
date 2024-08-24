@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bloodtrack database</title>
+    <link rel="shortcut icon" type="x=icon" href="logo.jpg" >
+    <style>
+          header{
+            display: flex;
+            justify-content: space-between;
+            padding: 7px 20px;
+            margin-bottom: 0px;
+            background-color: black;
+            color: #fff;
+        }
+       nav {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            transform: skew(-25deg);
+            padding-top: 20px;
+            padding-bottom: 5px;
+            padding-left: 30px;
+            margin-top: 0px;
+            padding-right: 30px;
+            background: transparent;
+        }
+        nav a {
+           
+            text-decoration: none;
+            padding: 7px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-left: 25px;
+            border-radius: 3px;
+            color: blue;
+          background-color: lavender;
+            transition: all 0.2s linear;
+        }
+        nav a:hover {
+           background-color: aquamarine;
+           color: black;
+            
+        }
+
+        .logo{
+                left: 0px;
+                justify-content: center;
+                width: 65px;
+                height: 60px;
+                padding-top: 0px;
+               padding-bottom: 0px;
+               border-radius: 15px;
+               margin-left: 30px;
+               margin-top: 0px;
+               margin-bottom: 0px;
+        }
+     body{
+        
+        margin: 0;
+        padding: 0;
+        background-color: lavenderblush;
+        
+     }
+     .dnprocess{
+          text-align: center;
+          padding-top: 3px;
+          padding-bottom: 10px;
+          color: blue;
+          
+        }
+        .dnprocess h4{
+          font-size: 40px;
+          font-weight: bolder;
+        }
+        .dnprocess :hover{
+          
+          color: #494244;
+        }
+     
+         
+    </style>
+</head>
+<body>
+    <header>
+      
+        <img src="logo.jpg" class="logo" alt="logo">
+        <h1 style="margin-top: 0px;padding-top: 12px; padding-bottom: 0px; margin-bottom: 0px; "><span style="color: crimson;"> BLOOD</span> TRACK</h1>
+     <nav>
+         <a href="btype.html">FORM</a>
+         <a href="index.html">HOME</a>
+         <a href="about.html">ABOUT</a>
+         <a href="contact.html">CONTACT</a>
+     </nav>    
+    </header>
+    <div class="dnprocess">
+        <h4>
+            WELCOME TO BLOOD TRACK <span style="color: red;">DATABASE</span>
+        </h4>
+    </div>
+    
+    <div id="userDiv">
+        
+        <script type="module">
+          
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+            
+            const firebaseConfig = {
+                authDomain: "bloodtrack-vr46.firebaseapp.com",
+                projectId: "bloodtrack-vr46",
+                storageBucket: "bloodtrack-vr46.appspot.com",
+                messagingSenderId: "513930329652",
+                appId: "1:513930329652:web:880e77597879d0ea4a9461",
+                apiKey: "AIzaSyCi5B6YUD6X8GIL5JKGecZIt1d90dI6J1s",
+                measurementId: "G-9WE9WC3XES"
+            };
+            
+            
+            const app = initializeApp(firebaseConfig);
+            import{ getDatabase, ref, get,child} from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js";
+            const db = getDatabase();
+
+            let userDiv = document.getElementById("userDiv");
+            let unno = 1;
+           
+           
+
+            function getusers(){
+                const dbref=ref(db);
+                get(child(dbref, 'blood form data')).then((users)=>{
+                    users.forEach(un=>{
+                        adduseraslistitem(un);
+
+                    });
+                })
+            }
+
+            function adduseraslistitem(un){
+                 let key = un.key;
+                 let value= un.val();
+ 
+                 let username = document.createElement("li");
+                 let appoinment_date = document.createElement("li");
+                 let appoinment_time = document.createElement("li");
+                 let purpose=document.createElement("li");
+                 let bloodgroup = document.createElement("li");
+                 let city = document.createElement("li");
+                 let country = document.createElement("li");
+                 let phonenumber = document.createElement("li");
+                 let state = document.createElement("li");
+                 let heading = document.createElement("h3");
+
+ 
+                 heading.innerHTML="PURPOSE:"+value.purpose;
+                 username.innerHTML="NAME ="+ value.username;
+                 phonenumber.innerHTML="PHONE NUMBER ="+value.phonenumber;
+                 purpose.innerHTML="PURPOSE ="+value.purpose;
+                 bloodgroup.innerHTML="BLOOD GROUP ="+ value.bloodgroup;
+                 appoinment_date.innerHTML="APPOINMENT DATE ="+ value.appoinment_date;
+                 appoinment_time.innerHTML="APPOINMENT TIME ="+ value.appoinment_time;
+                 country.innerHTML="COUNTRY ="+ value.country;
+                 state.innerHTML="STATE ="+ value.state;
+                 city.innerHTML="CITY ="+ value.city;
+ 
+                 let ul= document.createElement("ul");
+                 ul.append(heading, username, phonenumber,purpose, bloodgroup, appoinment_date, appoinment_time, country, state, city);
+                 userDiv.append(ul);
+                 unno++;
+                
+             }
+
+             window.addEventListener("load",getusers);
+
+          </script>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,424 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blood track home</title>
+    <link rel="shortcut icon" type="x=icon" href="logo.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+
+    crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <style>
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            
+            background-image: linear-gradient(to bottom,rgb(230, 233, 233),lavender);
+        }
+        
+        header{
+            display: flex;
+            justify-content: space-between;
+            padding: 7px 20px;
+            margin-bottom: 0px;
+            background-color: black;
+            color: #fff;
+        }
+       nav {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            transform: skew(-25deg);
+            padding-top: 20px;
+            padding-bottom: 5px;
+            padding-left: 30px;
+            margin-top: 0px;
+            padding-right: 30px;
+            background: transparent;
+        }
+        nav a {
+           
+            text-decoration: none;
+            padding: 7px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-left: 25px;
+            border-radius: 3px;
+            color: blue;
+          background-color: lavender;
+            transition: all 0.2s linear;
+        }
+        nav a:hover {
+            background-color: turquoise;
+           color: black;
+            
+        }
+
+        .logo{
+                left: 0px;
+                justify-content: center;
+                width: 65px;
+                height: 60px;
+                padding-top: 0px;
+               padding-bottom: 0px;
+               border-radius: 15px;
+               margin-left: 30px;
+               margin-top: 0px;
+               margin-bottom: 0px;
+        }
+                
+        
+        table{
+            margin: 20px;
+        }
+        tr{
+            color: rgb(0, 85, 255);
+           background-color: rgb(179, 229, 229);
+            
+        }
+        td{
+            padding: 10px;
+            width: 300px;
+            text-align: center;
+        }
+        
+      @keyframes moveLetters {
+        0% {
+            transform: translateX(0);
+        }
+        50% {
+            transform: translateX(50px);
+        }
+        100% {
+            transform: translateX(0);
+        }
+      }
+      .moving-text {
+        display:inline-block;
+        font-size: 24px;
+        animation: moveLetters 0.7s infinite;
+        color: brown;
+        margin-left: 20px;
+        margin-right: 10px;
+       
+      }
+      #bf{
+        padding-left: 40px;
+        padding-right: 12px;
+      }
+      #bf:hover{
+        color: red;
+       
+      }
+      
+      #about:hover{
+        color: darkviolet;
+      }
+      #img{
+        display: flex;
+        justify-content: center;
+        border-radius: 5px;
+      }
+      .design{
+        color: #ae1313;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        
+      }
+        
+        
+      
+    
+    footer {
+          background-color: rgba(0, 0, 0, 0.907);
+          color: #fff;
+          text-align: center;
+          padding: 5px;
+          font-style: italic;
+          font-size: larger;
+          bottom: 0;
+          
+          
+      }
+        .socialIcons{
+        margin-top: 5px;
+      }
+      .socialIcons a{
+        margin-left: 15px;
+      }
+      #video{
+      display: flex;
+      justify-content: center;
+
+      }
+      #awar{
+        color: #f20e0e;
+        padding-left: 40px;
+
+       
+      }
+      #contact{
+
+        padding-left: 40px;
+        padding-right: 12px;
+      }
+      #about{
+        padding-left: 40px;
+        padding-right: 12px;
+      }
+     /*for image liding*/
+
+     .slider{
+    width: 800px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+   margin-left: 23%;
+
+}
+.slides{
+    width: 500%;
+    height: 500px;
+    display: flex;
+   
+}
+.slides input{
+    display: none;
+
+}
+.slide{
+    width: 20%;
+    transition: 2s;
+
+}
+.slide img{
+    width: 800px;
+    height: 500px;
+
+}
+.manual{
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+    
+}
+.manuals{
+    
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+    .manuals:not(:last-child){
+        margin-right: 40px;
+    }
+    .manuals:hover{
+       background-color: red;
+    }
+    #radio1:checked ~ .first{
+        margin-left: 0;
+    }
+    #radio2:checked ~ .first{
+        margin-left: -20%;
+    }
+    #radio3:checked ~ .first{
+        margin-left: -40%;
+    }
+    #radio4:checked ~ .first{
+        margin-left: -60%;
+    }
+    .auto{
+        
+        position: absolute;
+       width: 800px;
+        margin-top: 460px;
+        display: flex;
+        justify-content: center;
+    }
+    .auto div{
+        border: 2px solid white;
+        padding: 5px;
+        border-radius: 10px;
+        transition: 1s;
+    }
+    .auto div:not(:last-child){
+        margin-right: 40px;
+    }
+    #radio1:checked ~ .auto .auto1{
+        background-color: black;
+    }
+    #radio2:checked ~ .auto .auto2{
+        background-color: black;
+    }
+    #radio3:checked ~ .auto .auto3{
+        background-color: black;
+    }
+    #radio4:checked ~ .auto .auto4{
+        background-color: black;
+    }
+
+
+   
+        
+    </style>
+</head>
+<body>
+    <header>
+      
+           <img src="logo.jpg" class="logo" alt="logo">
+           <h1 style="margin-top: 0px;padding-top: 12px; padding-bottom: 0px; margin-bottom: 0px; "><span style="color: crimson;"> BLOOD</span> TRACK</h1>
+        <nav>
+            <a href="admin.html">VOLUNTEER</a>
+            <a href="btype.html">FORM</a>
+            <a href="about.html">ABOUT</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>    
+    </header>
+        
+   
+        <h2 style="padding-left: 40px;">WELCOME TO BLOOD TRACK😊</h2>
+        <div class="slider">
+            <div class="slides">
+                <input type="radio" id="radio1" name="radios">
+                <input type="radio" id="radio2" name="radios">
+                <input type="radio" id="radio3" name="radios">
+                <input type="radio" id="radio4" name="radios">
+                <div class="slide first">
+                    <img src="blood1.jpg" alt="image1" >
+                    
+                </div>
+                <div class="slide">
+                    <img src="blood 2.png" alt="image2">
+    
+                </div>
+                <div class="slide">
+                    <img src="blood3.jpg" alt="image3">
+    
+                </div>
+                <div class="slide">
+                    <img src="blood4.jpg" alt="image4">
+    
+                </div>
+                <div class="auto">
+                    <div class="auto1"></div>
+                    <div class="auto2"></div>
+                    <div class="auto3"></div>
+                    <div class="auto4"></div>
+                </div>
+            </div>
+            <div class="manual">
+                <label for="radio1" class="manuals"></label>
+                <label for="radio2" class="manuals"></label>
+                <label for="radio3" class="manuals"></label>
+                <label for="radio4" class="manuals"></label>
+            </div>
+        </div> <hr>
+        <h2 id="awar">AWARENESS VIDEO:</h2>
+        <div id="video">
+        <iframe  width="750px" height="450px"  src="https://www.youtube.com/embed/0jDdmLpwrFk?si=3ogVIahFV1WejV6B" title="YouTube video player" frameborder="0" allow=" autoplay;  loop; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen ></iframe>
+       </div>
+        <hr>
+        <p> <span class="moving-text">TO DONATE OR REQUEST BLOOD PLEASE CLICK THE <b>"FORM"</b> OPTION IN NAVIGATION HEADING OR <A href="btype.html"> <b>CLICK HERE.</b> </A> </span> 
+        </p>
+        
+        
+        <div id="bf">
+            <h2>Benefits of Blood Donation:</h2>
+            <p>As we all know by now, blood donation has a lot of benefits. Why a person requires blood has various reasons. It may be an illness or also an accident, nonetheless, it is important. The blood that we donate helps a person in need. It enhances their health condition and makes them overcome their critical situation.<br>
+                <p>Donating blood has benefits for your emotional and physical health. According to a report by the Mental Health Foundation, helping others can:</p>
+                <ul>
+                    <li>reduce stress</li>
+                    <li>improve your emotional well-being</li>
+                    <li>benefit your physical health</li>
+                    <li>help get rid of negative feelings</li>
+                    <li>provide a sense of belonging and reduce isolation</li>
+                </ul>
+                <p>Research has found further evidence of the health benefits that come specifically from donating blood.</p>
+                <br>
+       
+        </div>
+        <div id="about">
+                <h1>
+                    WHY DONATE BLOOD
+                </h1>
+                <p>You are not useless, know your worth by donating blood.</p>
+                <h2>
+                    Why do we need you to give blood
+                </h2>
+                <p>
+                    We need new blood donors from all the background to ensure there is right blood available for patients who
+                    needs it.
+                </p>
+                <h3>
+                    We need:
+                </h3>
+                <ul>
+                    <li>Atleast 400 donors to meet the present demand</li>
+                    <li>Around 1350 donors a year to replace those who can no longer donate</li>
+                    <li>3000 new donors with priority blood types such as O negative every year</li>
+                    <li>More young people to start giving blood so we can make sure we have enough blood in the future</li>
+                </ul>
+          </div>
+
+           <p> <span class="moving-text">Warning:Do not pay money for blood to the blood donor.If any person seeking money contact the website or call nearby team members.</span> 
+         </p>
+
+        
+        <div id="contact">
+            <h2>CONTACT US:</h2>
+            <table border="1">
+                <tr style="background-color: #666; color: rgba(186, 231, 52, 0.658);">
+                    <td>CITY</td> <td>CONTACT NUMBER</td>
+                </tr>
+                <tr>
+                    <td>CHENNAI</td> <td>123456789</td>
+                </tr>
+                <tr>
+                    <td>COIMBATORE</td> <td>987654321</td>
+                </tr>
+                <tr>
+                    <td>KANCHIPURAM</td> <td>123789456</td>
+                </tr>
+                <tr>
+                    <td>MADURAI</td> <td>987123654</td>
+                </tr>
+            </table>
+
+        </div>
+
+        <footer>
+            <div class="socialIcons">
+
+                <a href="https://www.facebook.com/profile.php?id=61556919518855&mibextid=ZbWKwL" style="color:blue;"><i class="fa-brands fa-facebook"></i></a>
+        
+                <a href="https://www.instagram.com/donate_blood_to_save_life?igsh=ZGgyOG1oNGw0NTRz" style="color:red;"><i class="fa-brands fa-instagram"></i></a>
+        
+                <a href="https://www.instagram.com/donate_blood_to_save_life?igsh=ZGgyOG1oNGw0NTRz" style="color: cyan;"><i class="fa-brands fa-twitter"></i></a>
+        
+                <a href="https://youtu.be/xv-avP4PCDA?si=i0sd50PdHR3ZNxhU" style="color: red;"><i class="fa-brands fa-youtube"></i></a>
+           </div>
+        
+             <p style="margin-top: 3px;">Copyright &copy;2024;All Rights Reserved.Designed by <span class="design">The Blood Track</span></p>
+        </footer>
+
+
+    <script>
+        var counter=1;
+        setInterval(function(){
+            document.getElementById("radio"+counter).checked=true;
+            counter=counter+1 ;
+
+            if(counter>4){
+                counter=1;
+            }
+
+        },4000);
+    </script>
+    
+</body>
+</html>
